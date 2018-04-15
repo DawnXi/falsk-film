@@ -105,9 +105,12 @@ ul,ol{
 .card {
     background: #dbd9d9;
     margin-top: 50px;
+    padding-bottom: 20px;
 }
 .card-content {
     padding: 0 10px;
+    overflow-x:  auto;
+    overflow-y:  hidden;
 }
 .card .title{
 	height: 50px;
@@ -118,4 +121,28 @@ ul,ol{
 }
 .input-group.fr{
 	width: 120px;
+}
+.admin.table{
+	/* margin-bottom: 50px; */
+	position: relative;
+}
+.admin.table>thead>tr>th{
+	border-bottom: 2px solid #848484;
+}
+.admin.table>tbody>tr>th{
+	border-top: 1px solid #5d5d5d;
+}
+.admin.table>tbody>tr>td{
+	border-top: 1px solid #5d5d5d;
+}
+.admin.pagination{
+	margin: 0;
+	margin-top: -25px;
+	position:  absolute;
+	right: 0;
+	top: 105%;
+	/* bottom: 0px; */
+}
+.admin.input-group{
+	width: 150px;
 }
