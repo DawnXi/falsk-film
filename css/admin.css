@@ -35,7 +35,7 @@ ul,ol{
     background: #0f84a9;
 }
 .h-right-content{
-	background: #9cd99c;
+	background: #dbd9d9;
 	overflow:  hidden;
 }
 .h-right .menu{}
@@ -92,18 +92,18 @@ ul,ol{
 }
 .content{
 	width: 100%;
-	background: #b2b5b2;
+	background: #ded9d9;
 	float:  left;
 	min-height: 625px;
 }
 .content-header{
 	width: 100%;
-	background: #b2b5b2;
+	background: #dbd9d9;
 	/* float:  left; */
 	overflow: hidden;
 }
 .card {
-    background: #dbd9d9;
+    background: #f6f3f3;
     margin-top: 50px;
     padding-bottom: 20px;
 }
