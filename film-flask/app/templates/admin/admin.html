@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap-3.3.7-dist/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/admin.css')}}">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="h-left">图pain+微电影管理系统</div>
+      <div class="h-right">
+        <div class="menu fl">---</div>
+        <div class="user fr">
+          <img src="https://picsum.photos/30/30?image=330">xxx</div></div>
+    </div>
+    <div class="content-header">
+      <!-- 内容页头部 -->
+      <div class="h-right-content">
+        <div class="header-title fl">微电影管理系统</div>
+        <ol class="breadcrumb fr">
+          <li>
+            <a href="#">Home</a></li>
+          <li>
+            <a href="#">Library</a></li>
+          <li class="active">Data</li></ol>
+        <div class="content container">
+         <!-- 内容页主体 -->
+         {% block content %}
+         {% endblock %}
+        </div>
+      </div>
+    </div>
+    <!-- 侧栏 -->
+    <div class="side">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" alt="64x64" src="https://picsum.photos/64/64?image=330" data-holder-rendered="true"></a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">用户xxx</h4>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>在线</div>
+      </div>
+      <div class="input-group side-search">
+        <input type="text" class="form-control side-search-item" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon side-search-item">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员中心
+          <span class="badge">14</span>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>子项1
+              <span class="badge">14</span></li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>子项2
+              <span class="badge">4</span></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>修改密码
+          <span class="badge">4</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>评论记录
+          <span class="badge">8</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录日志
+          <span class="badge">5</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏电影
+          <span class="badge">2</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员中心
+          <span class="badge">14</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>修改密码
+          <span class="badge">4</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>评论记录
+          <span class="badge">8</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录日志
+          <span class="badge">5</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏电影
+          <span class="badge">2</span></li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
+
+
+</body>
+
+</html>

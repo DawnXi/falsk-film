@@ -1,0 +1,94 @@
+{% extends "admin/admin.html" %}
+{% block content%}
+<!-- 用户列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">用户列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <table class="table admin">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                           <ul class="pagination fr admin">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span></a>
+                        </li>
+                        <li>
+                          <a href="#">1</a></li>
+                        <li>
+                          <a href="#">2</a></li>
+                        <li>
+                          <a href="#">3</a></li>
+                        <li>
+                          <a href="#">4</a></li>
+                        <li>
+                          <a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span></a>
+                        </li>
+                      </ul>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

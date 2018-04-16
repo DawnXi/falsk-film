@@ -1,0 +1,36 @@
+{% extends "admin/admin.html" %}
+{% block content%}
+<!-- 添加管理员 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">添加管理员</div>
+                </div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员名称</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入管理员名称"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员密码</label>
+                      <input type="password" class="form-control" id="exampleInputEmail1" placeholder="请输入管理员密码"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员重复密码</label>
+                      <input type="password" class="form-control" id="exampleInputEmail1" placeholder="请输入管理员重复密码"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">所属角色</label>
+                      <select class="form-control">
+                          <option>--请选择所属角色--</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-primary">添加</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

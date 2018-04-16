@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap-3.3.7-dist/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/admin.css')}}">
+</head>
+
+<body>
+	<!-- 管理员登录页 -->
+	<div class="row">
+		<div class="col-xs-10   col-md-4 col-xs-offset-1 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 管理员登录</h3>
+				</div>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<label for="exampleInputEmail1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 账号</label>
+							<input type="text" class="form-control" placeholder="请输入账号！">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> 密码</label>
+							<input type="password" class="form-control" placeholder="请输入密码！">
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">登录</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
+
+
+</body>
+
+</html>
