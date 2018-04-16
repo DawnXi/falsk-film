@@ -15,7 +15,6 @@ ul,ol{
 }
 .header,.content-header{
 	width: 100%;
-	/* height: 50px; */
 }
 .h-left,.h-left-content{
 	width: 230px;
@@ -25,10 +24,8 @@ ul,ol{
 }
 .h-right,.h-right-content{
 	width: 100%;
-	/* height: 50px; */
 	padding-right: 230px;
 	margin-left: 230px;
-	/* background: greenyellow; */
 }
 .h-right {
     height: 50px;
@@ -66,12 +63,9 @@ ul,ol{
     height: 100%;
     background: #222d32;
     color: #b8c7ce;
-    /* margin-top: -50px; */
     position: absolute;
     top: 50px;
     left: 0px;
-    /* margin-bottom: 500px; */
-    /* padding-top: 50px; */
 }
 .side-search{
 	margin: 10px;
@@ -82,8 +76,6 @@ ul,ol{
 }
 .side ul{
 	background: #2c3b41;
-	/* overflow:  hidden; */
-	/* float:  left; */
 }
 .side li{
 	border: none;
@@ -99,7 +91,6 @@ ul,ol{
 .content-header{
 	width: 100%;
 	background: #dbd9d9;
-	/* float:  left; */
 	overflow: hidden;
 }
 .card {
@@ -114,7 +105,6 @@ ul,ol{
 }
 .card .title{
 	height: 50px;
-	/* background: pink; */
 	line-height: 47px;
 	padding: 0px 10px;
 	border-top: #2196F3 solid;
@@ -123,7 +113,6 @@ ul,ol{
 	width: 120px;
 }
 .admin.table{
-	/* margin-bottom: 50px; */
 	position: relative;
 }
 .admin.table>thead>tr>th{
@@ -141,7 +130,6 @@ ul,ol{
 	position:  absolute;
 	right: 0;
 	top: 105%;
-	/* bottom: 0px; */
 }
 .admin.input-group{
 	width: 150px;

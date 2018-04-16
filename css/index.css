@@ -1,3 +1,6 @@
+body{
+	background: #f8f8f8;
+}
 ul,ol{
 	list-style: none;
 	padding: 0;
@@ -27,8 +30,21 @@ ul,ol{
 .film-info{
 	margin-bottom: 20px;
 }
+.row-container{
+	margin: 0 auto;
+	padding: 0px 5%;
+	padding-bottom: 5%;
+	text-align: left;
+	background: #fff;
+}
+.film-info{
+	margin-bottom: 20px;
+}
 .pageing{
 	margin-bottom: 20px;
+}
+.star span{
+	color: yellow;
 }
 
 
@@ -42,11 +58,14 @@ ul,ol{
 	padding: 10px;
 }
 .film{
+	padding: 0px 15px;
+}
+.film,.content{
 	position: relative;
 	padding: 10px;
 	text-align: left;
 }
-.film-title{
+.film-title,.comment-text{
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -60,11 +79,28 @@ ul,ol{
 }
 
 
-
-
+/*play*/
+.btn-box {
+    margin: 20px 0px;
+}
 .btn-box div{
 	display: inline-block;
 	padding: 5px 15px;
 	background: red;
 	color: #fff;
+	margin-right: 20px;
+}
+.user-head{
+	padding: 0;
+}
+.user-head img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+
+
+/*user*/
+a.thumbnail {
+    width: 100px;
 }
