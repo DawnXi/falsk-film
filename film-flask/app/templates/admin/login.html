@@ -18,16 +18,24 @@
 					<h3 class="panel-title"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 管理员登录</h3>
 				</div>
 				<div class="panel-body">
-					<form>
+					{% for msg in get_flashed_messages() %}
+						<font style="color: red">{{ msg }}</font>
+					{% endfor %}
+
+					<form method="POST">
 						<div class="form-group">
-							<label for="exampleInputEmail1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 账号</label>
-							<input type="text" class="form-control" placeholder="请输入账号！">
+							{{ form.account }}
+							{% for err in form.account.errors %}
+								<font style="color: red">{{ err }}</font>
+							{% endfor %}
 						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> 密码</label>
-							<input type="password" class="form-control" placeholder="请输入密码！">
+							{{ form.pwd }}
+							{% for err in form.pwd.errors %}
+								<font style="color: red">{{ err }}</font>
+							{% endfor %}
 						</div>
-						<button type="submit" class="btn btn-primary btn-block">登录</button>
+						{{ form.submit }}
+						{{ form.csrf_token }}
 					</form>
 				</div>
 			</div>
