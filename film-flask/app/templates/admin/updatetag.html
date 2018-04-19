@@ -8,7 +8,7 @@
                   <div class="fl">添加标签</div>
                 </div>
                 <div class="card-content">
-                  <form method="post">
+                  <form method="post" action="{{ url_for('admin.updatetag',id=id)}}">
                     {% for msg in get_flashed_messages(category_filter=["ok"]) %}
                     <div class="alert alert-success alert-dismissible" role="alert">
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -21,15 +21,17 @@
                         {{ msg }}
                       </div>
                     {% endfor %}
+                    <label for="exampleInputEmail1">原标签名</label>
+                    <span class="label label-info">{{ t.name }}</span>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">{{ form.name.label }}</label>
-                      {{ form.name }}
+                      <label for="exampleInputEmail1">新标签名</label>
+                      <input class="form-control" id="name" name="name" placeholder="{{ t.name }}" type="text" value="">
                       {% for err in form.name.errors %}
                         	<font style="color: red">{{ err }}</font>
                       {% endfor %}
                     </div>
                     {{ form.csrf_token }}
-                    {{ form.submit }}
+                    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="修改">
                   </form>
                 </div>
               </div>

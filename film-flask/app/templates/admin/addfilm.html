@@ -1,5 +1,8 @@
 {% extends "admin/admin.html" %}
 {% block content%}
+{% block css %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+{% endblock %}
  <!-- 添加电影 -->
           <div class="row">
             <div class="col-md-12">
@@ -8,41 +11,100 @@
                   <div class="fl">添加电影</div>
                 </div>
                 <div class="card-content">
-                  <form>
+                  {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     {{ msg }}
+                  </div>
+                  {% endfor %}
+                  {% for msg in get_flashed_messages(category_filter=["err"]) %}
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      {{ msg }}
+                    </div>
+                  {% endfor %}
+                  <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">片名</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入片名">
+                      <label for="exampleInputFile">片名</label>
+                      {{ form.title }}
+                      {% for err in form.title.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">文件</label>
-                      <input type="file" id="exampleInputFile">
+                      {{ form.url }}
+                      {% for err in form.url.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
                       <video></video>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">介绍</label>
-                      <textarea class="form-control" rows="3"></textarea>
+                      {{ form.info }}
+                      {% for err in form.info.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">封面</label>
-                      <input type="file" id="exampleInputFile">
+                      {{ form.logo }}
+                      {% for err in form.logo.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
                       <video></video>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">星级</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="1星"></div>
+                      {{ form.star }}
+                      {% for err in form.star.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
+                    </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">标签</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="科幻"></div>
+                      {{ form.tag_id }}
+                      {% for err in form.tag_id.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
+                    </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">地区</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入地区！"></div>
+                      {{ form.area }}
+                      {% for err in form.area.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
+                    </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">片长</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入片长！"></div>
-                  
-                    <button type="submit" class="btn btn-default btn-primary">添加</button></form>
+                      {{ form.length }}
+                      {% for err in form.length.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">上映时间</label>
+                      {{ form.release_time }}
+                      {% for err in form.release_time.errors %}
+                        	<font style="color: red">{{ err }}</font>
+                      {% endfor %}
+                    </div>
+
+                    {{ form.csrf_token }}
+                    {{ form.submit }}
+                  </form>
                 </div>
               </div>
             </div>
           </div>
+          <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+          <script type="text/javascript">
+             $(document).ready(function(){
+               $('#input_release_time').datepicker({
+                 autoclose: true,
+                 format: 'yyyy-mm-dd',
+                 language: 'zh-CN'
+               })
+             })
+          </script>
 {% endblock %}

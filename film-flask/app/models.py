@@ -3,6 +3,8 @@ from datetime import datetime
 datetime.utcnow()
 from app import db
 from werkzeug.security import generate_password_hash,check_password_hash
+db.drop_all()
+db.create_all()
 #会员
 class User(db.Model):
 	__tablename__ = "user"
@@ -11,7 +13,7 @@ class User(db.Model):
 	pwd=db.Column(db.String(100))
 	email=db.Column(db.String(100),unique=True)
 	phone=db.Column(db.String(11),unique=True)
-	info=db.Column(db.Text)
+	info=db.Column(db.String(255))
 	face=db.Column(db.String(255),unique=True)
 	addtime=db.Column(db.DateTime,index=True,default=datetime.utcnow)
 	uuid=db.Column(db.String(255),unique=True)
@@ -106,14 +108,17 @@ class Movie(db.Model):
 	__tablename__ = "movie"
 	id=db.Column(db.Integer,primary_key=True)
 	title=db.Column(db.String(255),unique=True)
-	url=db.Column(db.String(255),unique=True)
+	url=db.Column(db.String(255))
 	info=db.Column(db.Text)
-	logo=db.Column(db.String(255),unique=True)
+	logo=db.Column(db.String(255))
 	playnum=db.Column(db.BigInteger)
-	commentnum=db.Column(db.BigInteger)
+	commentnum=db.Column(db.Integer)
 	star=db.Column(db.SmallInteger)
-	tag_id=db.Column(db.BigInteger, db.ForeignKey("tag.id"))
-	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
+	tag_id=db.Column(db.Integer, db.ForeignKey("tag.id"))
+	area=db.Column(db.String(255))
+	length=db.Column(db.String(255))
+	release_time=db.Column(db.String(255))
+	addtime = db.Column(db.DateTime,index=True, default="2018/05/06")
 	comments = db.relationship("Comment", backref="movie")
 	moviecols = db.relationship("Moviecol", backref="movie")
 
@@ -137,8 +142,8 @@ class Comment(db.Model):
 	__tablename__ = "comment"
 	id=db.Column(db.Integer,primary_key=True)
 	content=db.Column(db.Text)
-	movie_id=db.Column(db.BigInteger, db.ForeignKey("movie.id"))
-	user_id=db.Column(db.BigInteger, db.ForeignKey("user.id"))
+	movie_id=db.Column(db.Integer, db.ForeignKey("movie.id"))
+	user_id=db.Column(db.Integer, db.ForeignKey("user.id"))
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 	def __repr__(self):
@@ -150,8 +155,8 @@ class Moviecol(db.Model):
 	__tablename__ = "moviecol"
 	id=db.Column(db.Integer,primary_key=True)
 	content=db.Column(db.Text)
-	user_id=db.Column(db.BigInteger, db.ForeignKey("user.id"))
-	tag_id=db.Column(db.BigInteger, db.ForeignKey("movie.id"))
+	user_id=db.Column(db.Integer, db.ForeignKey("user.id"))
+	tag_id=db.Column(db.Integer, db.ForeignKey("movie.id"))
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 	def __repr__(self):

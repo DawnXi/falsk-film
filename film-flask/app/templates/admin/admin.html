@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap-3.3.7-dist/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/admin.css')}}">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
 </head>
 
 <body>
@@ -56,14 +58,14 @@
       </div>
       <ul class="list-group">
         <li class="list-group-item">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员中心
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 标签管理
           <span class="badge">14</span>
           <ul class="list-group">
             <li class="list-group-item">
-              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>子项1
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.addtag') }}">添加标签</a>
               <span class="badge">14</span></li>
             <li class="list-group-item">
-              <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>子项2
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.taglist',page=1) }}">标签列表</a>
               <span class="badge">4</span></li>
           </ul>
         </li>
@@ -97,8 +99,7 @@
       </ul>
     </div>
   </div>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static',filename='bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
+
 
 
 </body>
