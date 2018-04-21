@@ -131,7 +131,10 @@ class Preview(db.Model):
 	__tablename__ = "preview"
 	id=db.Column(db.Integer,primary_key=True)
 	title=db.Column(db.String(255),unique=True)
+<<<<<<< HEAD
 	logo=db.Column(db.String(255),unique=True)
+=======
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 	def __repr__(self):

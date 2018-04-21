@@ -76,7 +76,11 @@ ul,ol{
 }
 .side-search-item{
 	border: none;
+<<<<<<< HEAD
 	background: #374850;
+=======
+	background: #374850; 
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 }
 .side ul{
 	background: #2c3b41;
@@ -90,7 +94,11 @@ ul,ol{
 	width: 100%;
 	background: #ded9d9;
 	float:  left;
+<<<<<<< HEAD
 	min-height: 560px;
+=======
+	min-height: 650px;
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 }
 .content-header{
 	width: 100%;
@@ -138,4 +146,8 @@ ul,ol{
 }
 .admin.input-group{
 	width: 150px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77

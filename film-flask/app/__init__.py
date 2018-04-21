@@ -9,7 +9,11 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:123@127.0.0.1:3306
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 app.config["SECRET_KEY"] = "f3sfds54f65sds23d2s65a49sda6sfdd5s64f5"
 #配置文件上传路径
+<<<<<<< HEAD
 app.config["UP_DIR"]=os.path.join(os.path.abspath(os.path.dirname(__file__)),"static/uploads/")
+=======
+app.config["UP_DIR"]=os.path.join(os.path.abspath(os.path.dirname(__file__)),"static/uploads")
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 db = SQLAlchemy(app)
 app.debug = True
 

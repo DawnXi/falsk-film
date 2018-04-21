@@ -3,6 +3,7 @@ from . import admin
 from flask import render_template,redirect,url_for,flash,session,request
 from werkzeug.security import generate_password_hash,check_password_hash
 # 引入表单
+<<<<<<< HEAD
 from app.admin.forms import LoginForm,TagForm,MovieForm,PreviewForm,AdminForm,MoviecolForm,AuthForm,UserForm,RoleForm,PwdForm
 from app.models import Admin,Tag,Movie,Preview,User,Comment,Role,Auth,Oplog,Adminlog,Userlog,Moviecol
 
@@ -10,6 +11,13 @@ from app.models import Admin,Tag,Movie,Preview,User,Comment,Role,Auth,Oplog,Admi
 from functools import wraps
 from app import db,app
 from werkzeug.utils import secure_filename
+=======
+from app.admin.forms import LoginForm,TagForm,MovieForm
+from app.models import Admin,Tag,Movie
+from functools import wraps
+from app import db,app
+from werkzeug.utils  import secure_filename
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 import os
 import uuid
 import datetime
@@ -79,7 +87,10 @@ def addtag():
 def taglist(page):
 	if page is None:
 		page = 1
+<<<<<<< HEAD
 	#查询出数据并设置分页大小，将数据集传到视图
+=======
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 	page_data = Tag.query.order_by(Tag.addtime.desc()).paginate(page=page, per_page=10)#per_page分页条数
 	return render_template("admin/taglist.html",page_data=page_data)
 
@@ -109,13 +120,17 @@ def updatetag(id=None):
 		flash("修改标签成功！","ok")
 		return redirect(url_for("admin.updatetag",id=id))
 	return render_template("admin/updatetag.html",id=id,form=form,t=tag)
+<<<<<<< HEAD
 
+=======
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 #添加电影
 @admin.route("/addfilm/",methods=['GET','POST'])
 def addfilm():
 	form = MovieForm()
 	if form.validate_on_submit():
 		data = form.data
+<<<<<<< HEAD
 		film = Movie.query.filter_by(title=data['title']).count()
 		if film == 1:
 			flash('片名已存在','err')
@@ -133,15 +148,37 @@ def addfilm():
 			os.chmod(app.config["UP_DIR"],"rw")
 		form.url.data.save(app.config["UP_DIR"]+url)
 		form.logo.data.save(app.config["UP_DIR"]+logo)
+=======
+		file_url = secure_filename(form.url.data.filename)
+		file_logo = secure_filename(form.logo.data.filename)
+		if not os.path.exists(app.config["UP_DIR"]):
+			os.makedirs(app.config["UP_DIR"])
+			os.chmod(app.config["UP_DIR"],"rw")
+		url = change_filename(file_url)
+		logo = change_filename(file_logo)
+		form.url.data.save(app.config["UP_DIR"]+url)
+		form.logo.data.save(app.config["UP_DIR"]+logo)
+		film = Movie.query.filter_by(title=data['title']).count()
+		if film == 1:
+			flash('片名已存在','err')
+			return redirect(url_for('admin.addfilm'))
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 		movie =Movie(
 			title=data['title'],
 			url=url,
 			info=data['info'],
 			logo=logo,
+<<<<<<< HEAD
 			star=int(data['star']),
 			playnum=0,
 			commentnum=0,
 			tag_id=int(data['tag_id']),
+=======
+			star=data['star'],
+			playnum=0,
+			commentnum=0,
+			tag_id=data['tag_id'],
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 			area=data['area'],
 			length=data['length'],
 			release_time=str(data['release_time'])
@@ -152,6 +189,7 @@ def addfilm():
 		return redirect(url_for('admin.addfilm'))
 	return render_template("admin/addfilm.html",form=form)
 
+<<<<<<< HEAD
 #电影列表
 @admin.route("/movie/list/<int:page>",methods=['GET'])
 def movielist(page):
@@ -500,3 +538,35 @@ def resetpassword():
 		flash("修改密码成功！,请重新登录","ok")
 		redirect(url_for('admin.loginout'))
 	return render_template("admin/resetpassword.html",form=form)
+=======
+@admin.route("/addforeshow/")
+def addforeshow():
+	return render_template("admin/addforeshow.html")
+
+@admin.route("/commentslist/")
+def commentslist():
+	return render_template("admin/commentslist.html")
+
+@admin.route("/userlist/")
+def userlist():
+	db.create_all()
+	a = Admin(name="ymx",pwd=generate_password_hash("123"))
+	t = Tag(name="爱情")
+	db.session.add(a)
+	db.session.add(t)
+	db.session.commit()
+	return("jgjhgvhjvhvh")
+	return render_template("admin/userlist.html")
+
+@admin.route("/addadmin/")
+def addadmin():
+	return render_template("admin/addadmin.html")
+
+@admin.route("/adminlist/")
+def adminlist():
+	return render_template("admin/adminlist.html")
+
+@admin.route("/resetpassword/")
+def resetpassword():
+	return render_template("admin/resetpassword.html")
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77

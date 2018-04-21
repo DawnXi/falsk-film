@@ -2,10 +2,16 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,FileField,TextAreaField,SelectField
 from wtforms.validators import DataRequired,ValidationError
+<<<<<<< HEAD
 from app.models import Admin,Movie,Tag,Auth
 
 tags = Tag.query.all()
 auth = Auth.query.all()
+=======
+from app.models import Admin,Movie,Tag
+
+tags = Tag.query.all()
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 
 
 class LoginForm(FlaskForm):
@@ -182,6 +188,7 @@ class MovieForm(FlaskForm):
 			"class":"btn btn-primary",
 		}
 	)
+<<<<<<< HEAD
 
 
 class PreviewForm(FlaskForm):
@@ -418,3 +425,5 @@ class PwdForm(FlaskForm):
 		admin = Admin.query.filter_by(name=name).first()
 		if not Admin.check_pwd(pwd):
 			raise ValidationError("旧密码错误！")
+=======
+>>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
