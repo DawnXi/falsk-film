@@ -1,0 +1,68 @@
+{% extends "admin/admin.html" %}
+{% import "common/pageing.html" as pg %}
+{% block content%}
+<!-- 标签列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">标签列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     {{ msg }}
+                  </div>
+                  {% endfor %}
+                  <table class="table admin">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>片名</th>
+                        <th>片长</th>
+                        <th>标签</th>
+                        <th>地区</th>
+                        <th>星级</th>
+                        <th>播放数量</th>
+                        <th>评论数量</th>
+                        <th>上映时间</th>
+                        <th>操作事项</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      	{% for f in page_data.items %}
+                          <tr>
+                            <th scope="row">{{ f.id }}</th>
+                            <td>{{ f.title }}</td>
+                            <td>{{ f.length }}分钟</td>
+                            <td>{{ f.tag.name }}</td>
+                            <td>{{ f.area }}</td>
+                            <td>{{ f.star }}</td>
+                            <td>{{ f.playnum }}</td>
+                            <td>{{ f.commentnum }}</td>
+                            <td>{{ f.release_time }}</td>
+                            <td>
+                              <a class="label label-warning" href="{{ url_for('admin.updatemovie',id=f.id )}}">编辑</a>
+                              <a class="label label-danger" href="{{ url_for('admin.removemovie',id=f.id )}}">删除</a>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                        <tr>
+                          <td>
+                           {{ pg.page(page_data,"admin.movielist") }}
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

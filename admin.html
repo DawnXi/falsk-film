@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/admin.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="h-left">图pain+微电影管理系统</div>
+      <div class="h-right">
+        <div class="menu fl">---</div>
+        <div class="user fr">
+          <img src="https://picsum.photos/30/30?image=330">xxx</div></div>
+    </div>
+    <div class="content-header">
+      <!-- 内容页头部 -->
+      <div class="h-right-content">
+        <div class="header-title fl">微电影管理系统</div>
+        <ol class="breadcrumb fr">
+          <li>
+            <a href="#">Home</a></li>
+          <li>
+            <a href="#">Library</a></li>
+          <li class="active">Data</li></ol>
+        <div class="content container">
+          <!-- 后台首页 -->
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">内存使用率</div>
+                  <div class="icon fr">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="card-content">测试内容</div></div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">系统设置</div></div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">限制速率大小</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="512"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">限制内存大小</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="10m"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">限制客户数量</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="5"></div>
+                    <button type="submit" class="btn btn-default btn-primary">保存并重启服务</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 添加标签 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">添加标签</div>
+                </div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">标签名称</label>
+                      <input type="text" class="form-control" placeholder="请输入标签名">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-primary">添加</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 标签列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">标签列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <table class="table admin">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                           <ul class="pagination fr admin">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span></a>
+                        </li>
+                        <li>
+                          <a href="#">1</a></li>
+                        <li>
+                          <a href="#">2</a></li>
+                        <li>
+                          <a href="#">3</a></li>
+                        <li>
+                          <a href="#">4</a></li>
+                        <li>
+                          <a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span></a>
+                        </li>
+                      </ul>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 添加电影 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">添加电影</div>
+                </div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">片名</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入片名">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">文件</label>
+                      <input type="file" id="exampleInputFile">
+                      <video></video>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">介绍</label>
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">封面</label>
+                      <input type="file" id="exampleInputFile">
+                      <video></video>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">星级</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="1星"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">标签</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="科幻"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">地区</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入地区！"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">片长</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入片长！"></div>
+                  
+                    <button type="submit" class="btn btn-default btn-primary">添加</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 添加预告 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">添加预告</div>
+                </div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">预告标题</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入预告标题！"></div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">预告封面</label>
+                      <input type="file" id="exampleInputFile">
+                      <video></video>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-primary">添加</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 评论列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">评论列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <table class="table admin">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="media">
+                            <div class="media-left">
+                              <a href="#">
+                                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="" data-holder-rendered="true">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading">Media heading</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus .
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="update">2018.5.12</div>
+                          <span class="label label-danger">Danger</span>
+                        </td>
+                      </tr>
+                        <tr>
+                        <td>
+                          <div class="media">
+                            <div class="media-left">
+                              <a href="#">
+                                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="" data-holder-rendered="true">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading">Media heading</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus .
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="update">2018.5.12</div>
+                          <span class="label label-danger">Danger</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="media">
+                            <div class="media-left">
+                              <a href="#">
+                                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="" data-holder-rendered="true">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading">Media heading</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus .
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="update">2018.5.12</div>
+                          <span class="label label-danger">Danger</span>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 标签列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">标签列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <table class="table admin">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-success">查看</span>
+                          <span class="label label-info">解冻</span>
+                        <span class="label label-warning">冻结</span>
+                      <span class="label label-danger">删除</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                           <ul class="pagination fr admin">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span></a>
+                        </li>
+                        <li>
+                          <a href="#">1</a></li>
+                        <li>
+                          <a href="#">2</a></li>
+                        <li>
+                          <a href="#">3</a></li>
+                        <li>
+                          <a href="#">4</a></li>
+                        <li>
+                          <a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span></a>
+                        </li>
+                      </ul>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 添加管理员 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">添加管理员</div>
+                </div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员名称</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入管理员名称"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员密码</label>
+                      <input type="password" class="form-control" id="exampleInputEmail1" placeholder="请输入管理员密码"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员重复密码</label>
+                      <input type="password" class="form-control" id="exampleInputEmail1" placeholder="请输入管理员重复密码"></div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">所属角色</label>
+                      <select class="form-control">
+                          <option>--请选择所属角色--</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-primary">添加</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 管理员列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">管理员列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <table class="table admin">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="label label-warning">Warning</span>
+                          <span class="label label-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                           <ul class="pagination fr admin">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span></a>
+                        </li>
+                        <li>
+                          <a href="#">1</a></li>
+                        <li>
+                          <a href="#">2</a></li>
+                        <li>
+                          <a href="#">3</a></li>
+                        <li>
+                          <a href="#">4</a></li>
+                        <li>
+                          <a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span></a>
+                        </li>
+                      </ul>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 修改密码 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">修改密码</div></div>
+                <div class="card-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">旧密码</label>
+                      <input type="password" class="form-control" placeholder="请输入旧密码">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">新密码</label>
+                      <input type="password" class="form-control" placeholder="请输入新密码">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-primary">修改</button></form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 侧栏 -->
+    <div class="side">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" alt="64x64" src="https://picsum.photos/64/64?image=330" data-holder-rendered="true"></a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">用户xxx</h4>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>在线</div>
+      </div>
+      <div class="input-group side-search">
+        <input type="text" class="form-control side-search-item" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon side-search-item">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员中心
+          <span class="badge">14</span>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>子项1
+              <span class="badge">14</span></li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>子项2
+              <span class="badge">4</span></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>修改密码
+          <span class="badge">4</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>评论记录
+          <span class="badge">8</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录日志
+          <span class="badge">5</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏电影
+          <span class="badge">2</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员中心
+          <span class="badge">14</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>修改密码
+          <span class="badge">4</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>评论记录
+          <span class="badge">8</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录日志
+          <span class="badge">5</span></li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏电影
+          <span class="badge">2</span></li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

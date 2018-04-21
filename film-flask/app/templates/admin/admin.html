@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap-3.3.7-dist/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/admin.css')}}">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="h-left">图pain+微电影管理系统</div>
+      <div class="h-right">
+        <div class="menu fl">---</div>
+        <div class="user fr">
+          <img src="https://picsum.photos/30/30?image=330">xxx</div></div>
+    </div>
+    <div class="content-header">
+      <!-- 内容页头部 -->
+      <div class="h-right-content">
+        <div class="header-title fl">微电影管理系统</div>
+        <ol class="breadcrumb fr">
+          <li>
+            <a href="#">Home</a></li>
+          <li>
+            <a href="#">Library</a></li>
+          <li class="active">Data</li></ol>
+        <div class="content container">
+         <!-- 内容页主体 -->
+         {% block content %}
+         {% endblock %}
+        </div>
+      </div>
+    </div>
+    <!-- 侧栏 -->
+    <div class="side">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" alt="64x64" src="https://picsum.photos/64/64?image=330" data-holder-rendered="true"></a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">用户xxx</h4>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>在线</div>
+      </div>
+      <div class="input-group side-search">
+        <input type="text" class="form-control side-search-item" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon side-search-item">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+      </div>
+      <!-- <ul class="list-group">
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 标签管理
+          <span class="badge">14</span>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.addtag') }}">添加标签</a>
+              <span class="badge">14</span></li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.taglist',page=1) }}">标签列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>电影管理
+          <span class="badge">4</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.addfilm') }}">添加电影</a>
+              <span class="badge">14</span></li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.movielist',page=1) }}">电影列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+				</li> -->
+         <li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>预告管理
+          <span class="badge">8</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.addpr') }}">添加预告</a>
+              <span class="badge">14</span></li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.previewlist',page=1) }}">预告列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+				</li>
+        <!-- <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>评论管理
+          <span class="badge">5</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.commentlist',page=1) }}">评论列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+				</li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏管理
+          <span class="badge">2</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.moviecollist',page=1) }}">收藏列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+				</li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员管理
+          <span class="badge">14</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.userlist',page=1) }}">会员列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+				</li>
+				<li class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>管理员管理
+          <span class="badge">5</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.adminlist',page=1) }}">管理员列表</a>
+              <span class="badge">4</span></li>
+          </ul>
+				</li> -->
+        <!-- <li class="list-group-item">
+          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>日志管理
+          <span class="badge">4</span>
+					<ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.userloginlist',page=1) }}">用户登录日志列表</a>
+              <span class="badge">4</span>
+						</li>
+						<li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.adminloginlist',page=1) }}">管理员登陆日志列表</a>
+              <span class="badge">4</span>
+						</li>
+						<li class="list-group-item">
+              <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.oplist',page=1) }}">操作日志列表</a>
+              <span class="badge">4</span>
+						</li>
+          </ul>
+				</li> -->
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>权限管理
+          <span class="badge">8</span>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.addauth') }}">添加权限</a>
+							<span class="badge">4</span>
+						</li>
+						<li class="list-group-item">
+							<span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.authlist',page=1) }}">权限列表</a>
+							<span class="badge">4</span>
+						</li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>角色
+          <span class="badge">8</span>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.addrole') }}">添加角色</a>
+							<span class="badge">4</span>
+						</li>
+						<li class="list-group-item">
+							<span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.rolelist',page=1) }}">角色列表</a>
+							<span class="badge">4</span>
+						</li>
+					</ul>
+				</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

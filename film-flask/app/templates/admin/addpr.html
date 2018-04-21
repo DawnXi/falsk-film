@@ -1,0 +1,38 @@
+{% extends "admin/admin.html" %}
+{% block content%}
+<!-- 添加管理员 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">添加预告</div>
+                </div>
+                <div class="card-content">
+                  {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     {{ msg }}
+                  </div>
+                  {% endfor %}
+                  {% for msg in get_flashed_messages(category_filter=["err"]) %}
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      {{ msg }}
+                    </div>
+                  {% endfor %}
+                  <form method="post">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">管理员名称</label>
+                        {{ form.title }}
+                        {% for err in form.title.errors %}
+                            <font style="color: red">{{ err }}</font>
+                        {% endfor %}
+                    </div>
+                    {{ form.csrf_token }}
+                    {{ form.submit(value='添加') }}
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

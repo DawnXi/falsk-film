@@ -1,0 +1,55 @@
+{% extends "admin/admin.html" %}
+{% import "common/pageing.html" as pg %}
+{% block content%}
+<!-- 标签列表 -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="title">
+                  <div class="fl">标签列表</div>
+                  <div class="icon fr">
+                    <div class="input-group fr admin">
+                      <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     {{ msg }}
+                  </div>
+                  {% endfor %}
+                  <table class="table admin">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>用户名</th>
+                        <th>添加时间</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      	{% for t in page_data.items %}
+                          <tr>
+                            <th scope="row">{{ t.id }}</th>
+                            <td>{{ t.name }}</td>
+                            <td>{{ t.addtime }}</td>
+                            <td>
+                              <a class="label label-warning" href="{{ url_for('admin.updateuser',id=t.id )}}">编辑</a>
+                              <a class="label label-danger" href="{{ url_for('admin.removeuser',id=t.id )}}">删除</a>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                        <tr>
+                          <td>
+                           {{ pg.page(page_data,"admin.userlist") }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

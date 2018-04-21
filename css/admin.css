@@ -1,0 +1,141 @@
+ul,ol{
+	list-style: none;
+	padding: 0;
+}
+
+.wrapper{
+	position: relative;
+	overflow: hidden;
+}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.header,.content-header{
+	width: 100%;
+}
+.h-left,.h-left-content{
+	width: 230px;
+	height: 50px;
+	float: left;
+	background: #3b77a6;
+}
+.h-right,.h-right-content{
+	width: 100%;
+	padding-right: 230px;
+	margin-left: 230px;
+}
+.h-right {
+    height: 50px;
+    background: #0f84a9;
+}
+.h-right-content{
+	background: #dbd9d9;
+	overflow:  hidden;
+}
+.h-right .menu{}
+
+.h-right .user img{}
+
+
+
+@media (max-width: 768px){
+	.h-left,.h-left-content {
+	   width: 100%;
+	   float: none;
+	   transition: transform .3s ease-in-out,width .3s ease-in-out;
+	}
+	.h-right,.h-right-content{
+		margin: 0;
+		padding: 0;
+		transition: transform .3s ease-in-out,width .3s ease-in-out;
+	}
+	.side{
+		transform: translate(-231px, 0);
+		transition: transform .3s ease-in-out,width .3s ease-in-out;
+	}
+	.content {
+	    min-height: 100% !important;
+	}
+}
+
+.side {
+    width: 230px;
+    height: 100%;
+    min-height: 800px;
+    background: #222d32;
+    color: #b8c7ce;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+.side-search{
+	margin: 10px;
+}
+.side-search-item{
+	border: none;
+	background: #374850; 
+}
+.side ul{
+	background: #2c3b41;
+}
+.side li{
+	border: none;
+	background-color: transparent;
+	line-height: 1.5;
+}
+.content{
+	width: 100%;
+	background: #ded9d9;
+	float:  left;
+	min-height: 650px;
+}
+.content-header{
+	width: 100%;
+	background: #dbd9d9;
+	overflow: hidden;
+}
+.card {
+    background: #f6f3f3;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+.card-content {
+    padding: 0 10px;
+    overflow-x:  auto;
+    overflow-y:  hidden;
+}
+.card .title{
+	height: 50px;
+	line-height: 47px;
+	padding: 0px 10px;
+	border-top: #2196F3 solid;
+}
+.input-group.fr{
+	width: 120px;
+}
+.admin.table{
+	position: relative;
+}
+.admin.table>thead>tr>th{
+	border-bottom: 2px solid #848484;
+}
+.admin.table>tbody>tr>th{
+	border-top: 1px solid #5d5d5d;
+}
+.admin.table>tbody>tr>td{
+	border-top: 1px solid #5d5d5d;
+}
+.admin.pagination{
+	margin: 0;
+	margin-top: -25px;
+	position:  absolute;
+	right: 0;
+	top: 105%;
+}
+.admin.input-group{
+	width: 150px;
+}
