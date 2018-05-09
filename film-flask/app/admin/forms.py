@@ -1,17 +1,11 @@
 #coading:uft8
-from flask_wtf import FlaskForm
+from flask_wtf  import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,FileField,TextAreaField,SelectField
 from wtforms.validators import DataRequired,ValidationError
-<<<<<<< HEAD
 from app.models import Admin,Movie,Tag,Auth
 
 tags = Tag.query.all()
 auth = Auth.query.all()
-=======
-from app.models import Admin,Movie,Tag
-
-tags = Tag.query.all()
->>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 
 
 class LoginForm(FlaskForm):
@@ -25,7 +19,6 @@ class LoginForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入账号！!!",
-			#"required":"required"
 		}
 	)
 
@@ -38,7 +31,6 @@ class LoginForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入密码！!!",
-			#"required":"required"
 		}
 	)
 
@@ -188,20 +180,17 @@ class MovieForm(FlaskForm):
 			"class":"btn btn-primary",
 		}
 	)
-<<<<<<< HEAD
-
 
 class PreviewForm(FlaskForm):
-
 	title = StringField(
 		label="预告名称",
 		validators=[
-			DataRequired("请输入预告名称")
+			DataRequired("请输入预告名称！！！")
 		],
-		description='预告名称',
+		description="预告名称",
 		render_kw={
 			"class":"form-control",
-			"placeholder":"请输入预告名称"
+			"placeholder":"请输入预告名称！!!",
 		}
 	)
 
@@ -222,6 +211,7 @@ class PreviewForm(FlaskForm):
 
 
 
+
 class AdminForm(FlaskForm):
 	# 管理员登录表单
 	name = StringField(
@@ -233,7 +223,6 @@ class AdminForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入账号！!!",
-			#"required":"required"
 		}
 	)
 
@@ -246,7 +235,6 @@ class AdminForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入密码！!!",
-			#"required":"required"
 		}
 	)
 
@@ -281,7 +269,6 @@ class MoviecolForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入收藏内容！!!",
-			#"required":"required"
 		}
 	)
 
@@ -302,7 +289,6 @@ class AuthForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入权限名称!!",
-			#"required":"required"
 		}
 	)
 
@@ -325,7 +311,6 @@ class UserForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入账号！!!",
-			#"required":"required"
 		}
 	)
 
@@ -338,7 +323,6 @@ class UserForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入密码！!!",
-			#"required":"required"
 		}
 	)
 
@@ -361,7 +345,6 @@ class RoleForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入角色名称!!",
-			#"required":"required"
 		}
 	)
 
@@ -384,6 +367,8 @@ class RoleForm(FlaskForm):
 			"class":"btn btn-primary",
 		}
 	)
+
+
 class PwdForm(FlaskForm):
 	old_pwd = StringField(
 		label="旧密码",
@@ -394,7 +379,6 @@ class PwdForm(FlaskForm):
 		render_kw={
 			"class":"form-control",
 			"placeholder":"请输入旧密码!!",
-			#"required":"required"
 		}
 	)
 
@@ -418,12 +402,18 @@ class PwdForm(FlaskForm):
 		}
 	)
 
-	def yalidata_old_pwd(self,field):
+	def validate_old_pwd(self,field):
 		from flask import session
 		pwd = field.data
 		name = session['admin']
 		admin = Admin.query.filter_by(name=name).first()
-		if not Admin.check_pwd(pwd):
+		if not admin.check_pwd(pwd):
 			raise ValidationError("旧密码错误！")
-=======
->>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
+
+	def validate_new_pwd(self,field):
+		from flask import session
+		pwd = field.data
+		name = session['admin']
+		admin = Admin.query.filter_by(name=name).first()
+		if admin.check_pwd(pwd):
+			raise ValidationError("新密码与原密码相同，请重新修改！")

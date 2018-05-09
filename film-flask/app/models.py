@@ -20,6 +20,8 @@ class User(db.Model):
 	userlogs = db.relationship("Userlog", backref="user")
 	comments = db.relationship("Comment", backref="user")
 	moviecols = db.relationship("Moviecol", backref="user")
+	auths = db.relationship("Auth", backref="user")
+	roles = db.relationship("Role", backref="user")
 
 	def __repr__(self):
 		return "<User %r>" % self.name
@@ -131,10 +133,7 @@ class Preview(db.Model):
 	__tablename__ = "preview"
 	id=db.Column(db.Integer,primary_key=True)
 	title=db.Column(db.String(255),unique=True)
-<<<<<<< HEAD
 	logo=db.Column(db.String(255),unique=True)
-=======
->>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 	def __repr__(self):
@@ -160,7 +159,7 @@ class Moviecol(db.Model):
 	id=db.Column(db.Integer,primary_key=True)
 	content=db.Column(db.Text)
 	user_id=db.Column(db.Integer, db.ForeignKey("user.id"))
-	tag_id=db.Column(db.Integer, db.ForeignKey("movie.id"))
+	movie_id=db.Column(db.Integer, db.ForeignKey("movie.id"))
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 	def __repr__(self):
@@ -173,6 +172,7 @@ class Auth(db.Model):
 	id=db.Column(db.Integer,primary_key=True)
 	name=db.Column(db.String(100),unique=True)
 	url=db.Column(db.String(255),unique=True)
+	user_id=db.Column(db.Integer, db.ForeignKey("user.id"))
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 	def __repr__(self):
@@ -186,6 +186,7 @@ class Role(db.Model):
 	id=db.Column(db.Integer,primary_key=True)
 	name=db.Column(db.String(100),unique=True)
 	auths=db.Column(db.String(255))
+	user_id=db.Column(db.Integer, db.ForeignKey("user.id"))
 	addtime = db.Column(db.DateTime,index=True, default=datetime.utcnow)
 
 

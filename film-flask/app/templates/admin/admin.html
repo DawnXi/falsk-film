@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 	<meta charset="UTF-8">
 	<title>admin</title>
@@ -19,8 +20,20 @@
       <div class="h-left">图pain+微电影管理系统</div>
       <div class="h-right">
         <div class="menu fl">---</div>
-        <div class="user fr">
-          <img src="https://picsum.photos/30/30?image=330">xxx</div></div>
+				<div class="user fr">
+          <img src="https://picsum.photos/30/30?image=330">xxx<div class="thumbnail back" >
+          <img alt="100%x200" src="https://picsum.photos/30/30?image=345">
+          <div class="caption">
+            <h3>xxx</h3>
+            <p>2018-05-12</p>
+						<p>
+							<a href="{{ url_for('admin.resetpassword') }}" class="btn btn-default fl">修改密码</a>
+							<a href="{{ url_for('admin.loginout') }}" class="btn btn-primary fr" >退出系统</a>
+						</p>
+          </div>
+        </div>
+			</div>
+				</div>
     </div>
     <div class="content-header">
       <!-- 内容页头部 -->
@@ -32,7 +45,7 @@
           <li>
             <a href="#">Library</a></li>
           <li class="active">Data</li></ol>
-        <div class="content container">
+        <div class="content container" style="min-height:1500px">
          <!-- 内容页主体 -->
          {% block content %}
          {% endblock %}
@@ -56,11 +69,7 @@
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </span>
       </div>
-<<<<<<< HEAD
-      <!-- <ul class="list-group">
-=======
       <ul class="list-group">
->>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
         <li class="list-group-item">
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 标签管理
           <span class="badge">14</span>
@@ -74,7 +83,6 @@
           </ul>
         </li>
         <li class="list-group-item">
-<<<<<<< HEAD
           <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>电影管理
           <span class="badge">4</span>
 					<ul class="list-group">
@@ -85,7 +93,7 @@
               <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.movielist',page=1) }}">电影列表</a>
               <span class="badge">4</span></li>
           </ul>
-				</li> -->
+				</li>
          <li class="list-group-item">
           <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>预告管理
           <span class="badge">8</span>
@@ -98,7 +106,7 @@
               <span class="badge">4</span></li>
           </ul>
 				</li>
-        <!-- <li class="list-group-item">
+        <li class="list-group-item">
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>评论管理
           <span class="badge">5</span>
 					<ul class="list-group">
@@ -133,8 +141,8 @@
               <span class="glyphicon glyphicon-record" aria-hidden="true"></span> <a href="{{ url_for('admin.adminlist',page=1) }}">管理员列表</a>
               <span class="badge">4</span></li>
           </ul>
-				</li> -->
-        <!-- <li class="list-group-item">
+				</li>
+        <li class="list-group-item">
           <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>日志管理
           <span class="badge">4</span>
 					<ul class="list-group">
@@ -151,7 +159,7 @@
               <span class="badge">4</span>
 						</li>
           </ul>
-				</li> -->
+				</li>
         <li class="list-group-item">
           <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>权限管理
           <span class="badge">8</span>
@@ -180,40 +188,13 @@
 						</li>
 					</ul>
 				</li>
-=======
-          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>修改密码
-          <span class="badge">4</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>评论记录
-          <span class="badge">8</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录日志
-          <span class="badge">5</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏电影
-          <span class="badge">2</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>会员中心
-          <span class="badge">14</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>修改密码
-          <span class="badge">4</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>评论记录
-          <span class="badge">8</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录日志
-          <span class="badge">5</span></li>
-        <li class="list-group-item">
-          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>收藏电影
-          <span class="badge">2</span></li>
->>>>>>> cf09bf1d82b1f969047e30178d8cc585efcc1b77
       </ul>
     </div>
   </div>
-
-
-
+  <!-- 脚本 -->
+  {% block js %}
+  
+  {% endblock %}
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 {% extends "admin/admin.html" %}
 {% block content%}
-<!-- 添加标签 -->
+<!-- 修改标签 -->
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="title">
-                  <div class="fl">添加标签</div>
+                  <div class="fl">修改标签</div>
                 </div>
                 <div class="card-content">
                   <form method="post" action="{{ url_for('admin.updatetag',id=id)}}">
@@ -21,8 +21,6 @@
                         {{ msg }}
                       </div>
                     {% endfor %}
-                    <label for="exampleInputEmail1">原标签名</label>
-                    <span class="label label-info">{{ t.name }}</span>
                     <div class="form-group">
                       <label for="exampleInputEmail1">新标签名</label>
                       <input class="form-control" id="name" name="name" placeholder="{{ t.name }}" type="text" value="">

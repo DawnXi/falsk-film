@@ -1,12 +1,12 @@
 {% extends "admin/admin.html" %}
 {% import "common/pageing.html" as pg %}
 {% block content%}
-<!-- 标签列表 -->
+<!-- 评论列表 -->
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="title">
-                  <div class="fl">标签列表</div>
+                  <div class="fl">评论列表</div>
                   <div class="icon fr">
                     <div class="input-group fr admin">
                       <input type="text" class="form-control" placeholder="请输入关键字" aria-describedby="basic-addon2">
@@ -21,21 +21,25 @@
                   </div>
                   {% endfor %}
                   <table class="table admin">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>标签名称</th>
-                        <th>添加时间</th>
-                        <th>操作</th>
-                      </tr>
-                    </thead>
                     <tbody>
                       	{% for t in page_data.items %}
                           <tr>
-                            <th scope="row">{{ t.id }}</th>
-                            <td>{{ t.name }}</td>
-                            <td>{{ t.addtime }}</td>
                             <td>
+                              <div class="media">
+                                  <div class="media-left">
+                                    <a href="#">
+                                      <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                      src="{{ url_for('static',filename='uploads/'+t.user.face) }}" style="width: 64px; height: 64px;">
+                                    </a>
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">{{ t.user.name }}</h4>
+                                    关于电影<a href="#">{{ t.movie.title }}</a>的评论：{{ t.content }}
+                                  </div>
+                                </div>
+                            </td>
+                            <td>
+                              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{ t.addtime }}
                               <a class="label label-danger" href="{{ url_for('admin.removecomment',id=t.id )}}">删除</a>
                             </td>
                           </tr>

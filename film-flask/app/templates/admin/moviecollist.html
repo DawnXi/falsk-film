@@ -24,7 +24,8 @@
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>标签名称</th>
+                        <th>电影</th>
+                        <th>用户</th>
                         <th>添加时间</th>
                         <th>操作</th>
                       </tr>
@@ -33,7 +34,8 @@
                       	{% for t in page_data.items %}
                           <tr>
                             <th scope="row">{{ t.id }}</th>
-                            <td>{{ t.name }}</td>
+                            <td>{{ t.movie.title }}</td>
+                            <td>{{ t.user.name }}</td>
                             <td>{{ t.addtime }}</td>
                             <td>
                               <a class="label label-warning" href="{{ url_for('admin.updatemoviecol',id=t.id )}}">编辑</a>
